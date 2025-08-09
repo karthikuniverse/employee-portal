@@ -1,0 +1,19 @@
+.header_portion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.header_title{
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ri-logout-box-line{
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}

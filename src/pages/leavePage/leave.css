@@ -1,0 +1,75 @@
+.top_bar {
+    display: flex;
+    align-items: center;
+}
+
+.home_icon {
+    padding-bottom: 3px;
+    margin-right: 20px;
+
+    i {
+        font-size: 25px;
+        background: #efeff9;
+        padding: 3px;
+        border-radius: 6px;
+    }
+}
+
+.right_border {
+    margin-right: 15px;
+    border-right: 1px solid gray;
+}
+
+
+.header_Section {
+    padding: 10px 35px;
+    background: #fff;
+}
+
+
+.tabs-container {
+    border-bottom: 2px solid #ddd;
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* makes tabs horizontal */
+}
+
+.tabs li {
+    margin-right: 15px;
+}
+
+.tabs a {
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: hsl(228, 85%, 63%);
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    background-color:hsl(228deg 85% 66% / 26%);
+    border-radius: 5px;
+}
+
+.tabs a:hover {
+    color: #fff;
+    background: hsl(228, 85%, 63%);
+}
+
+.tabs a.active {
+    border-bottom: 3px solid #007bff;
+    /* active tab highlight */
+    color: #007bff;
+    background-color: #fff;
+}
+
+
+
+.leave_management_content{
+  padding: 10px 35px 0;
+}
