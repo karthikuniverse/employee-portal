@@ -73,13 +73,13 @@ const Sidebar = () => {
 
               <div className="sidebar__list">
                 <Link to={ROUTES.DASHBOARD} className={`sidebar__link ${currentPath === ROUTES.DASHBOARD ? 'active-link' : ''}`}>
-                  <i className="ri-pie-chart-2-fill"></i>
+                  <i className="ri-pie-chart-line"></i>
                   <span>Dashboard</span>
                 </Link>
 
-                <Link to={ROUTES.EMPLOYEE_MANAGEMENT} className={`sidebar__link ${currentPath === ROUTES.EMPLOYEE_MANAGEMENT ? 'active-link' : ''}`}>
+                <Link to={ROUTES.ADMIN} className={`sidebar__link ${currentPath === ROUTES.ADMIN ? 'active-link' : ''}`}>
                   <i className="ri-team-line"></i>
-                  <span>Employee Management</span>
+                  <span>Admin</span>
                 </Link>
 
                 <Link to={ROUTES.LEAVE} className={`sidebar__link ${currentPath.startsWith(ROUTES.LEAVE) ? 'active-link' : ''}`}>
@@ -99,12 +99,12 @@ const Sidebar = () => {
 
               <div className="sidebar__list">
                 <Link to="#" className={`sidebar__link ${currentPath === '/settings' ? 'active-link' : ''}`}>
-                  <i className="ri-settings-3-fill"></i>
+                  <i className="ri-settings-2-line"></i>
                   <span>Settings</span>
                 </Link>
 
                 <Link to="#" className={`sidebar__link ${currentPath === '/messages' ? 'active-link' : ''}`}>
-                  <i className="ri-notification-2-fill"></i>
+                  <i className="ri-notification-line"></i>
                   <span>Notifications</span>
                 </Link>
               </div>

@@ -20,6 +20,8 @@ const HeaderSection = () => {
         return 'Permission Management';
       case ROUTES.LEAVE_STATUS:
         return 'Leave Status';
+      case ROUTES.ADMIN:
+        return 'Admin Management';
       case '/attendance':
         return 'Attendance';
       case '/settings':

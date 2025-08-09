@@ -1,9 +1,10 @@
+import type { BreadcrumbItemType } from '@/atoms/ui/AppBreadCrumb/AppBreadCrumb';
+import AppBreadcrumb from '@/atoms/ui/AppBreadCrumb/AppBreadCrumb';
 import { DataTable } from '@/atoms/ui/DataTable/DataTable';
 import RHFDatePicker from '@/atoms/ui/DatePicker/DatePickerbase';
 import ReusableDialog from '@/atoms/ui/dialog/CustomDialog';
 import RHFSelect from '@/atoms/ui/Select/ReUseSelect';
 import AccordionItem from '@/components/accordion/CustomAccordion';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/breadcrumb/BreadCrumb'
 import { Button } from '@/components/button/Button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -12,7 +13,11 @@ import { type ColumnDef } from '@tanstack/react-table';
 import { MoreHorizontal } from 'lucide-react';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { Link, useLocation } from 'react-router'
+
+const items: BreadcrumbItemType[] = [
+  { label: "Permission Management", to: "#" },
+  { label: "Permission", to: ROUTES.PERMISSIONS }
+];
 
 
 export type User = {
@@ -115,8 +120,6 @@ export const userColumns: ColumnDef<User>[] = [
 
 ];
 
-
-
 interface FormFields {
   period: string;
   status: string;
@@ -125,7 +128,6 @@ interface FormFields {
 }
 
 const Permission = () => {
-  const { pathname } = useLocation();
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [visibleColumns, setVisibleColumns] = useState<string[]>(
     userColumns
@@ -164,7 +166,6 @@ const Permission = () => {
 
   return (
     <React.Fragment>
-
 
       {/* trigger dialog */}
       <ReusableDialog
@@ -207,7 +208,7 @@ const Permission = () => {
                 })
               }
             </div>
-            <div className='flex justify-end items-center gap-2.5'>
+            <div className='flex justify-end items-center gap-2.5 mt-2'>
               <Button onClick={() => setIsDialogOpen(false)} type="button" className="px-4 py-2 bg-gray-500 text-white rounded">
                 Cancel
               </Button>
@@ -221,21 +222,7 @@ const Permission = () => {
       </ReusableDialog>
 
       {/* breadcrumb  */}
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link to="#">Permission Management</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link to="#" className={pathname === ROUTES.PERMISSIONS ? 'text-blue-400 font-semibold' : ''}>Permission</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+      <AppBreadcrumb items={items} />
 
       {/* search section */}
       <AccordionItem title="Search">

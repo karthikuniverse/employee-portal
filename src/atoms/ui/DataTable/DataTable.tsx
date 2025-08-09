@@ -73,7 +73,7 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="rounded-xl pt-1 pb-5 px-5 bg-white">
-        <i onClick={handleIconClick} className="ri-settings-4-line block py-2.5 text-2xl cursor-pointer"></i>
+        <i onClick={handleIconClick} className="ri-settings-4-line block py-2.5 text-2xl cursor-pointer w-fit"></i>
         <Table className="border">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
